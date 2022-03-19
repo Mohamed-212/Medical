@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+
+    Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin'], function () {
+        // Authentication Routes...
+        Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginForm');
+        Route::post('login', 'Auth\LoginController@login')->name('login');
+        Route::get('logout', 'Auth\LoginController@logout')->name('logout');
+
+        // Home Routes...
+        Route::get('/', 'DashboardController@index')->name('dashboard');
+
+        // Device Routes...
+        Route::resource('devices', 'DeviceController');
+
+        // Brand Routes...
+        Route::resource('brands', 'BrandController');
+
+        // Model Routes...
+        Route::resource('models', 'ModelController');
+
+        // Service Routes...
+        Route::resource('services', 'ServiceController');
+
+        // Branch Routes...
+        Route::resource('branches', 'BranchController');
+
+        // Company Routes...
+        Route::resource('company', 'CompanyController');
+
+    });
+
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

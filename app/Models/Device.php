@@ -15,6 +15,11 @@ class Device extends Model
       'name'
     ];
 
+    public $validation_rules = [
+        'name_ar' => 'required',
+        'name_en' => 'required'
+    ];
+
     public function getNameAttribute()
     {
         if (app()->getLocale() == 'ar')
