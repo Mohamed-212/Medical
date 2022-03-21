@@ -158,5 +158,7 @@ return array(
             'name_ar' => 'اسم باللغة العربية',
             'description_ar' => 'الوصف باللغة الأنجليزية',
             'description_en' => 'الوصف باللغة العربية',
+            'device_id' => 'الجهاز',
+            'brand_id' => 'الماركة',
         ),
 );

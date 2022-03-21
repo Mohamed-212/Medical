@@ -15,6 +15,12 @@ class Brand extends Model
       'name'
     ];
 
+    public $validation_rules = [
+        'name_ar' => 'required',
+        'name_en' => 'required',
+        'device_id' => 'required|exists:devices,id'
+    ];
+
     public function getNameAttribute()
     {
         if (app()->getLocale() == 'ar')

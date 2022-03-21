@@ -56,5 +56,14 @@
         <link rel="stylesheet" href="{{asset('assets/admin-assets/plugins/flag-icon-css/css/flag-icon.min.css')}}">
     @endif
 
+    <style>
+        .invalid-feedback{
+            display: block;
+        }
+        th, td{
+            text-align: center;
+        }
+    </style>
+
     @stack('styles')
 </head>

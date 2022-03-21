@@ -10,6 +10,16 @@ use Illuminate\Support\Facades\Validator;
 class DeviceController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -17,8 +27,7 @@ class DeviceController extends Controller
     public function index()
     {
         $devices = Device::get();
-
-        return view('admin.device', compact(['devices']));
+        return view('admin.device.index', compact(['devices']));
     }
 
     /**
@@ -58,7 +67,12 @@ class DeviceController extends Controller
      */
     public function show($id)
     {
-        //
+        $device = Device::where('id', $id)->first();
+        if($device){
+            return view('admin.device.show', compact(['device']));
+        }else{
+            return redirect()->back()->with('error', __('dashboard.id_not_exist'));
+        }
     }
 
     /**
@@ -69,7 +83,12 @@ class DeviceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $device = Device::where('id', $id)->first();
+        if($device){
+            return view('admin.device.edit', compact(['device']));
+        }else{
+            return redirect()->back()->with('error', __('dashboard.id_not_exist'));
+        }
     }
 
     /**
@@ -81,7 +100,20 @@ class DeviceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $device = Device::where('id', $id)->first();
+        if($device){
+            $device_model = new Device();
+            $validator = Validator::make($request->all(), $device_model->validation_rules);
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator);
+            }
+            $device->name_ar = $request->name_ar;
+            $device->name_en = $request->name_en;
+            $device->save();
+            return redirect()->route('admin.devices.index')->with('success', __('dashboard.process_successfully'));
+        }else{
+            return redirect()->back()->with('error', __('dashboard.id_not_exist'));
+        }
     }
 
     /**
@@ -92,6 +124,12 @@ class DeviceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $device = Device::where('id', $id)->first();
+        if($device){
+            $device->delete();
+            return redirect()->route('admin.devices.index');
+        }else{
+            return redirect()->back()->with('error', __('dashboard.id_not_exist'));
+        }
     }
 }
