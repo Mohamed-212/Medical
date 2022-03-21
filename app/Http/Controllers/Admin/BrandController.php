@@ -71,7 +71,7 @@ class BrandController extends Controller
      */
     public function show($id)
     {
-        $brand = Brand::where('id', $id)->first();
+        $brand = Brand::with('getDevice')->where('id', $id)->first();
         if($brand){
             return view('admin.brand.show', compact(['brand']));
         }else{
@@ -87,7 +87,7 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
-        $brand = Brand::where('id', $id)->first();
+        $brand = Brand::with('getDevice')->where('id', $id)->first();
         if($brand){
             $devices = Device::get();
             $devices = $devices->pluck('name','id');

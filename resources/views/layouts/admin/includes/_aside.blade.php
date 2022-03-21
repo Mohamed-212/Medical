@@ -25,19 +25,19 @@
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
                     <a href="{{route('admin.devices.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-folder"></i>
                         <p>@lang('dashboard.devices')</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.brands.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fa fa-folder-plus"></i>
                         <p>@lang('dashboard.brands')</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.models.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-folder-open"></i>
                         <p>@lang('dashboard.models')</p>
                     </a>
                 </li>
@@ -49,13 +49,13 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.branches.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-code-branch"></i>
                         <p>@lang('dashboard.branches')</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{route('admin.company.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-wrench"></i>
                         <p>@lang('dashboard.company_info')</p>
                     </a>
                 </li>

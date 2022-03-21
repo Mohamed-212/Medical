@@ -34,7 +34,7 @@
                                 <div class="card-body">
                                     @foreach(['ar', 'en'] as $lang)
                                         <div class="form-group">
-                                            {!! Html::decode(Form::label(null, __('dashboard.name_'.$lang) . ' <span class="text-bold text-danger">*</span>')) !!}
+                                            {!! Html::decode(Form::label(null, __('dashboard.name_'.$lang))) !!}
                                             {!! Form::text('name_'.$lang, $device['name_'.$lang], ['class' => 'form-control', 'placeholder' => __('dashboard.name_'.$lang), 'disabled' => true]) !!}
                                         </div>
                                     @endforeach

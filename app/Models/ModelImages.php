@@ -18,7 +18,7 @@ class ModelImages extends Model
 
     public function getImagePathAttribute()
     {
-        return asset(Storage::url('public/models/' . $this->attributes['image']));
+        return asset(Storage::url('public/models/' . $this->attributes['model_id'] . '/' . $this->attributes['image']));
     }
 
 

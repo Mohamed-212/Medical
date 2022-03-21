@@ -42,7 +42,8 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::resource('branches', 'BranchController');
 
         // Company Routes...
-        Route::resource('company', 'CompanyController');
+        Route::get('company', 'CompanyController@index')->name('company.index');
+        Route::post('company/update', 'CompanyController@update')->name('company.update');
 
     });
 

@@ -16,7 +16,7 @@
              'current_page' => __('dashboard.show'),
               'prev_pages' => [
                     'admin.dashboard' => __('dashboard.dashboard'),
-                    'admin.devices.index' => __('dashboard.brands')
+                    'admin.brands.index' => __('dashboard.brands')
                 ]
             ])
 
@@ -34,13 +34,13 @@
                                 <div class="card-body">
                                     @foreach(['ar', 'en'] as $lang)
                                         <div class="form-group">
-                                            {!! Html::decode(Form::label(null, __('dashboard.name_'.$lang) . ' <span class="text-bold text-danger">*</span>')) !!}
+                                            {!! Html::decode(Form::label(null, __('dashboard.name_'.$lang))) !!}
                                             {!! Form::text('name_'.$lang, $brand['name_'.$lang], ['class' => 'form-control', 'placeholder' => __('dashboard.name_'.$lang), 'disabled' => true]) !!}
                                         </div>
                                     @endforeach
                                     <div class="form-group">
-                                        {!! Html::decode(Form::label(null, __('dashboard.device') . ' <span class="text-bold text-danger">*</span>')) !!}
-                                        {!! Form::text('device_id', $brand->getDevice->name, ['class' => 'form-control', 'placeholder' => __('dashboard.name_'.$lang), 'disabled' => true]) !!}
+                                        {!! Html::decode(Form::label(null, __('dashboard.device'))) !!}
+                                        {!! Form::text('device_id', $brand->getDevice->name, ['class' => 'form-control', 'placeholder' => __('dashboard.device'), 'disabled' => true]) !!}
                                     </div>
                                 </div>
                                 <!-- /.card-body -->

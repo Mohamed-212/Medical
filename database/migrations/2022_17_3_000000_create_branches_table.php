@@ -17,7 +17,8 @@ class CreateBranchesTable extends Migration
             $table->id();
             $table->string('name_ar');
             $table->string('name_en');
-            $table->string('address');
+            $table->string('address_ar');
+            $table->string('address_en');
             $table->string('telephone')->nullable();
             $table->string('mobile')->nullable();
             $table->string('email')->nullable();

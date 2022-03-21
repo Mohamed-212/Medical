@@ -15,6 +15,26 @@ class ModelBrand extends Model
       'name', 'description'
     ];
 
+    public $validation_rules = [
+        'name_ar' => 'required',
+        'name_en' => 'required',
+        'description_ar' => 'required',
+        'description_en' => 'required',
+        'images' => 'required',
+        'images.*' => 'required|mimes:jpeg,jpg,png',
+        'brand_id' => 'required|exists:brands,id'
+    ];
+
+    public $edit_validation_rules = [
+        'name_ar' => 'required',
+        'name_en' => 'required',
+        'description_ar' => 'required',
+        'description_en' => 'required',
+        'images' => 'nullable',
+        'images.*' => 'nullable|mimes:jpeg,jpg,png',
+        'brand_id' => 'required|exists:brands,id'
+    ];
+
     public function getNameAttribute()
     {
         if (app()->getLocale() == 'ar')

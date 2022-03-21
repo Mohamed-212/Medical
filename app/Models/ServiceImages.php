@@ -18,7 +18,7 @@ class ServiceImages extends Model
 
     public function getImagePathAttribute()
     {
-        return asset(Storage::url('public/services/' . $this->attributes['image']));
+        return asset(Storage::url('public/services/' . $this->attributes['service_id'] . '/' . $this->attributes['image']));
     }
 
 

@@ -15,7 +15,7 @@ class CreateServiceImagesTable extends Migration
     {
         Schema::create('service_images', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('service_id')->constrained('services');
+            $table->foreignId('service_id')->constrained('services')->cascadeOnDelete();
             $table->string('image');
             $table->timestamps();
         });

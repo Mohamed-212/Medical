@@ -16,7 +16,7 @@ class CreateCompanySetupsTable extends Migration
         Schema::create('company_setups', function (Blueprint $table) {
             $table->id();
             $table->string('key');
-            $table->string('value')->nullable();
+            $table->text('value')->nullable();
             $table->timestamps();
         });
     }

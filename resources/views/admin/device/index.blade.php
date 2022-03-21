@@ -40,7 +40,7 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    <button type="button" href="{{route('admin.devices.create')}}" class="btn btn-primary" data-toggle="modal" data-target="#modal-create"> <i class="fas fa-plus"></i>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-create"> <i class="fas fa-plus"></i>
                                         @lang('dashboard.create') </button>
                                 </h3>
                             </div>
