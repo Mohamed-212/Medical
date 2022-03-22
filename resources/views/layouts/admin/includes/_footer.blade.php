@@ -1,9 +1,6 @@
 <!-- Footer -->
 <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.2.0
-    </div>
+    <strong>@lang('dashboard.copyrights') &copy; 2022 <a href="http://212solutions.net">212 Solutions</a>.</strong>
+    @lang('dashboard.all_right_reserved')
 </footer>
 <!-- /.Footer -->

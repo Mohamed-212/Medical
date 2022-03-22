@@ -18,6 +18,13 @@
               'prev_pages' => []
             ])
 
+            @php
+                if(app()->getLocale() == 'ar')
+                    $arrow_class = 'fa-arrow-circle-left';
+                else
+                    $arrow_class = 'fa-arrow-circle-right';
+            @endphp
+
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
@@ -27,14 +34,13 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>150</h3>
-
-                                <p>New Orders</p>
+                                <h3>{{$devices}}</h3>
+                                <p>@lang('dashboard.devices')</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-bag"></i>
+                                <i class="ion ion-folder"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('admin.devices.index')}}" class="small-box-footer">@lang('dashboard.more_info') <i class="fas {{$arrow_class}}"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -42,14 +48,13 @@
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                                <p>Bounce Rate</p>
+                                <h3>{{$brands}}</h3>
+                                <p>@lang('dashboard.brands')</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-stats-bars"></i>
+                                <i class="ion ion-android-folder"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('admin.brands.index')}}" class="small-box-footer">@lang('dashboard.more_info') <i class="fas {{$arrow_class}}"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -57,14 +62,13 @@
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
-                                <h3>44</h3>
-
-                                <p>User Registrations</p>
+                                <h3>{{$models}}</h3>
+                                <p>@lang('dashboard.models')</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-person-add"></i>
+                                <i class="ion ion-android-folder-open"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('admin.models.index')}}" class="small-box-footer">@lang('dashboard.more_info') <i class="fas {{$arrow_class}}"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
@@ -72,14 +76,13 @@
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
-                                <h3>65</h3>
-
-                                <p>Unique Visitors</p>
+                                <h3>{{$services}}</h3>
+                                <p>@lang('dashboard.services')</p>
                             </div>
                             <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
+                                <i class="ion ion-android-apps"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="{{route('admin.services.index')}}" class="small-box-footer">@lang('dashboard.more_info') <i class="fas {{$arrow_class}}"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

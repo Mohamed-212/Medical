@@ -11,9 +11,9 @@
     <!-- wrapper -->
     <div class="wrapper">
 
-        <!-- BEGIN: Header-->
+        <!-- BEGIN: Loader-->
         @include('layouts.admin.includes._loader')
-        <!-- END: Header-->
+        <!-- END: Loader-->
 
         <!-- BEGIN: Header-->
         @include('layouts.admin.includes._header')
@@ -31,9 +31,9 @@
         @include('layouts.admin.includes._footer')
         <!-- END: Footer-->
 
-        <!-- BEGIN: Footer-->
+        <!-- BEGIN: Theme options-->
         @include('layouts.admin.includes._control_sidebar')
-        <!-- END: Footer-->
+        <!-- END: Theme options-->
 
     </div>
     <!-- ./wrapper -->

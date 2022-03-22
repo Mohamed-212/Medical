@@ -17,6 +17,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
 
+    // Dashboard Rotes...
     Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin'], function () {
         // Authentication Routes...
         Route::get('login', 'Auth\LoginController@showLoginForm')->name('loginForm');
@@ -45,6 +46,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('company', 'CompanyController@index')->name('company.index');
         Route::post('company/update', 'CompanyController@update')->name('company.update');
 
+    });
+
+    Route::group(['namespace' => 'Website', 'as' => 'website.'], function () {
+        // Home Routes...
+        Route::get('/', 'HomeController@index')->name('home');
     });
 
 });
