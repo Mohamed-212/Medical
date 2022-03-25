@@ -41,7 +41,7 @@ class CompanyController extends Controller
         $setup_model = new CompanySetups();
         $validator = Validator::make($request->all(), $setup_model->validation_rules);
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator);
+            return redirect()->back()->withErrors($validator)->withInput();
         }
         $setup_array = [
             ['key' => 'about_us_ar', 'value' => $request->about_us_ar],

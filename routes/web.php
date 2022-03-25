@@ -51,6 +51,11 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
     Route::group(['namespace' => 'Website', 'as' => 'website.'], function () {
         // Home Routes...
         Route::get('/', 'HomeController@index')->name('home');
+        Route::get('/about-us', 'AboutUsController@index')->name('about');
+        Route::get('/brand/{id}/models', 'BrandsController@index')->name('models');
+        Route::get('/models/{id}', 'ModelsController@show')->name('models.show');
+        Route::get('/services/{id}', 'ServicesController@show')->name('services.show');
+        Route::get('/contact-us', 'ContactUsController@index')->name('contact');
     });
 
 });

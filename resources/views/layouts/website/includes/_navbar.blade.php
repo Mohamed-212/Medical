@@ -12,57 +12,21 @@
                     <div class="cv-menu">
                         <ul>
                             <li><a href="{{route('website.home')}}">@lang('general.home')</a></li>
-                            <li><a href="about.html">@lang('general.about_us')</a></li>
+                            <li><a href="{{route('website.about')}}">@lang('general.about_us')</a></li>
                             <li class="cv-children-menu cv-mega-li"><a href="javascript:;">@lang('general.devices')</a>
                                 <div class="cv-mega-menu">
-                                    <div class="cm-menu-list">
-                                        <ul>
-                                            <li>
-                                                <h3>Face Mask</h3>
-                                            </li>
-                                            <li><a href="shop.html">N95 masks</a></li>
-                                            <li><a href="shop.html">Prana air masks</a></li>
-                                            <li><a href="shop.html">Totobobo masks</a></li>
-                                            <li><a href="shop.html">Oxiclear masks</a></li>
-                                            <li><a href="shop.html">Noymi masks</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="cm-menu-list">
-                                        <ul>
-                                            <li>
-                                                <h3>PPE kit</h3>
-                                            </li>
-                                            <li><a href="shop.html">General free size</a></li>
-                                            <li><a href="shop.html">Disposable kit</a></li>
-                                            <li><a href="shop.html">Surgical gown</a></li>
-                                            <li><a href="shop.html">Non woven kit</a></li>
-                                            <li><a href="shop.html">Pp spun bond</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="cm-menu-list">
-                                        <ul>
-                                            <li>
-                                                <h3>safety suits</h3>
-                                            </li>
-                                            <li><a href="shop.html">Nonwoven laminated</a></li>
-                                            <li><a href="shop.html">100 gsm disposable</a></li>
-                                            <li><a href="shop.html">Polypropylene 90 GSM</a></li>
-                                            <li><a href="shop.html">Disposable</a></li>
-                                            <li><a href="shop.html">Body coveralls</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="cm-menu-list">
-                                        <ul>
-                                            <li>
-                                                <h3>Eye protect</h3>
-                                            </li>
-                                            <li><a href="shop.html">safety goggles</a></li>
-                                            <li><a href="shop.html">Zoom goggles</a></li>
-                                            <li><a href="shop.html">Sleeping masks</a></li>
-                                            <li><a href="shop.html">Eye lense</a></li>
-                                            <li><a href="shop.html">Eye protector</a></li>
-                                        </ul>
-                                    </div>
+                                    @foreach(config('website.devices') as $device)
+                                        <div class="cm-menu-list">
+                                            <ul>
+                                                <li>
+                                                    <h3>{{$device->name}}</h3>
+                                                </li>
+                                                @foreach($device->getBrands as $brand)
+                                                    <li><a href="{{route('website.models', $brand->id)}}">{{$brand->name}}</a></li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </li>
                             <li class="cv-children-menu">
@@ -70,12 +34,12 @@
                                 <ul class="cv-sub-mmenu">
                                     @if(config('website.services'))
                                         @foreach(config('website.services') as $service)
-                                            <li><a href="blog-single.html">{{$service->name}}</a></li>
+                                            <li><a href="{{route('website.services.show', $service->id)}}">{{$service->name}}</a></li>
                                         @endforeach
                                     @endif
                                 </ul>
                             </li>
-                            <li><a href="contact.html">@lang('general.contact_us')</a></li>
+                            <li><a href="{{route('website.contact')}}">@lang('general.contact_us')</a></li>
                             <!-- Language Dropdown Menu -->
                             <li class="cv-children-menu">
                                 <a href=""> @if(app()->getLocale() == 'ar') @lang('general.arabic') @else @lang('general.english') @endif

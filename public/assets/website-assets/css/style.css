@@ -1,11 +1,11 @@
 /*--------------------- Copyright (c) 2020 --------------------------
-[Master Stylesheet] 
+[Master Stylesheet]
 Project: Medical Equipment - PPE Kit Responsive HTML Template
-Version: 1.0.0 
+Version: 1.0.0
 Author: Kamleshyadav
- ------------------------------------------------------------------- 
-[Table of contents] 
-1. body 
+ -------------------------------------------------------------------
+[Table of contents]
+1. body
 2. top header
 3. main header
 4. banner
@@ -208,7 +208,7 @@ input::-webkit-inner-spin-button {
     margin-top: 17px;
 }
 .cv-banner-img{
-    padding: 80px 0; 
+    padding: 80px 0;
     text-align: center;
 }
 .cv-banner-sale {
@@ -551,7 +551,7 @@ p#me_timer span {
 }
 .swiper-button-prev:hover, .swiper-button-next:hover{
     border-color: #3cbcff;
-} 
+}
 .swiper-button-next {
     right: -20px;
 }
@@ -1545,7 +1545,7 @@ p#me_timer span {
 .irs-line {
     height: 10px; top: 33px;
     background: #EEE;
-    background: linear-gradient(to bottom, #DDD -50%, #FFF 150%); 
+    background: linear-gradient(to bottom, #DDD -50%, #FFF 150%);
     border: 1px solid #CCC;
     border-radius: 16px;
     -moz-border-radius: 16px;
@@ -1589,7 +1589,7 @@ p#me_timer span {
     border-radius: 3px;
     -moz-border-radius: 3px;
 }
-/* ----------------Range Slider------------------ */ 
+/* ----------------Range Slider------------------ */
 /* shop end */
 /* about start */
 .cv-about-content h2 {
@@ -1700,7 +1700,7 @@ p#me_timer span {
     font-size: 18px;
 }
 .cv-help{
-    background: linear-gradient(45deg, rgba(60, 188, 255, 0.9),rgba(60, 188, 255, 0.9)),url(https://via.placeholder.com/1920x692);    
+    background: linear-gradient(45deg, rgba(60, 188, 255, 0.9),rgba(60, 188, 255, 0.9)),url(https://via.placeholder.com/1920x692);
 }
 .cv-help-icon svg {
     width: 70px;
@@ -2147,7 +2147,7 @@ p#me_timer span {
     border-right: 0;
     margin: 24px 0 30px;
     padding: 22px 0 23px;
-} 
+}
 .cv-account-info ul li{
     display: flex;
     margin-bottom: 10px;
@@ -2297,7 +2297,7 @@ p#me_timer span {
     margin-top: 12px;
     display: block;
 }
-.cv-login-form .cv-btn {    
+.cv-login-form .cv-btn {
     display: block;
     margin: 23px auto 0;
 }
@@ -2794,45 +2794,45 @@ ul.cv-language-selector {
     animation: cv-virus 10s linear infinite;
 }
 @keyframes cv-virus {
-    0% { 
+    0% {
         transform: translateY(50px)
     }
-    50% { 
-        transform: translateX(100px) 
+    50% {
+        transform: translateX(100px)
     }
-    75% { 
-        transform: translateX(-50px) 
+    75% {
+        transform: translateX(-50px)
     }
-    100% { 
-        transform: translateY(50px) 
+    100% {
+        transform: translateY(50px)
     }
 }
 @keyframes cv-virus1 {
-    0% { 
-        transform: translateX(50px) 
+    0% {
+        transform: translateX(50px)
     }
-    50% { 
-        transform: translateY(100px) 
+    50% {
+        transform: translateY(100px)
     }
-    75% { 
-        transform: translateY(-50px) 
+    75% {
+        transform: translateY(-50px)
     }
-    100% { 
-        transform: translateX(50px) 
+    100% {
+        transform: translateX(50px)
     }
 }
 @keyframes cv-virus2 {
-    0% { 
-        transform: translateX(100px) 
+    0% {
+        transform: translateX(100px)
     }
-    50% { 
-        transform: translateY(50px) 
+    50% {
+        transform: translateY(50px)
     }
-    75% { 
-        transform: translateY(-50px) 
+    75% {
+        transform: translateY(-50px)
     }
-    100% { 
-        transform: translateX(100px) 
+    100% {
+        transform: translateX(100px)
     }
 }
 /* banner4 end */
@@ -3347,7 +3347,7 @@ ul.cv-language-selector {
     .cv-header-style4 .cv-toggle-nav span {
         background: #3cbcff;
     }
-    .cv-header-style4 
+    .cv-header-style4
     .cv-header-style3 .cv-header-wooInfo .cv-children-menu:after,
     .cv-top-head-style4 .cv-header-wooInfo .cv-children-menu:after {
         right: 0;
@@ -3560,7 +3560,7 @@ ul.cv-language-selector {
         margin-bottom: 6px;
     }
     .cv-banner-text{
-        padding: 60px 0 0; 
+        padding: 60px 0 0;
     }
     .cv-banner-two-text {
         padding: 56px 0 0px;
@@ -3815,6 +3815,6 @@ ul.cv-language-selector {
     }
     .cv-account-info {
         margin: 26px 0 30px;
-    } 
+    }
 }
 /* responsive end */

@@ -28,6 +28,17 @@
     @endif
 
     <link rel="shortcut icon" href="{{asset('assets/website-assets/images/fav.png')}}" type="image/x-icon">
-
+    <style>
+        i.line-clamp2+p {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 52px;
+        }
+        .cv-blog-single-box .cv-blog-data {
+            padding: 20px 30px;
+        }
+    </style>
     @stack('styles')
 </head>

@@ -1,42 +1,80 @@
 @extends('layouts.website.app')
 
 @section('title')
-    @lang('general.home')
+    {{$model->name}}
 @endsection
 
 @push('styles')
-
+    <style>
+        .cv-arrival{
+            background: #f8fdff;
+        }
+    </style>
 @endpush
 
 @section('content')
 
-    <!-- banner start -->
-    <div class="cv-banner">
+    <!-- breadcrumb start -->
+    <div class="cv-breadcrumb">
         <div class="container">
             <div class="row">
-                <div class="col-md-7">
-                    <div class="cv-banner-two-text cv-banner-three-text">
-                        <h1>@lang('general.header_title')</h1>
-                        <p>@lang('general.header_brief')</p>
-                        <a class="cv-btn">@lang('general.show_models')</a>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="cv-banner-img-three">
-                        <img src="https://via.placeholder.com/400x648" alt="images" class="img-fluid"/>
+                <div class="col-12">
+                    <div class="cv-breadcrumb-box">
+                        <h1>{{$model->name}}</h1>
+                        <ul>
+                            <li><a href="{{route('website.home')}}">@lang('general.home')</a></li>
+                            <li>{{$model->name}}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- banner end -->
+    <!-- breadcrumb end -->
+    <!-- blog start -->
+    <div class="cv-blog-single spacer-top spacer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="cv-blog-single-box row">
+                        <div id="carouselExampleIndicators" class="carousel slide col-md-6" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                @foreach($model->getImages as $index => $image)
+                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$index}}" @if($index == 0) class="active" aria-current="true" @endif aria-label="Slide {{$index+1}}"></button>
+                                @endforeach
+                            </div>
+                            <div class="carousel-inner">
+                                @foreach($model->getImages as $index => $image)
+                                    <div class="carousel-item @if($index == 0) active @endif ">
+                                        <img src="{{$image->image_path}}" style="height: 350px" class="d-block w-100" alt="image">
+                                    </div>
+                                @endforeach
+                            </div>
+                            <button class="carousel-control-prev bg-info" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next bg-info" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div class="cv-blog-data col-md-6">
+                            <h2 class="cv-blog-title">{{$model->name}}</h2>
+                            {!! $model->description !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- blog end -->
 
     <!-- new arrivals start -->
     <div class="cv-arrival cv-product-three cv-product-slider spacer-top-less">
         <div class="container">
             <div class="cv-heading">
                 <h1>@lang('general.all_models_title')</h1>
-                <p>@lang('general.all_models_brief')</p>
             </div>
             <div class="row">
                 <div class="col-12">
