@@ -59,7 +59,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>&copy; 2022. @lang('general.all_right_reserved_by') <span class="text-dark">212 Solutions</span></p>
+                <p>&copy; 2022 @lang('general.all_right_reserved_by') <a href="http://212solutions.net" class="text-dark">212 Solutions</a></p>
             </div>
         </div>
     </div>
