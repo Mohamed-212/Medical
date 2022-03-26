@@ -29,7 +29,8 @@ return array(
     'search' => 'بحث',
     'brands' => 'الماركات',
     'no_model_found' => 'لا توجد موديلات',
-    '' => '',
+    'total' => 'إجمالي',
+    'showing_result' => 'عرض النتائج',
     '' => '',
     '' => '',
 );

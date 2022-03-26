@@ -29,7 +29,7 @@
 
     <link rel="shortcut icon" href="{{asset('assets/website-assets/images/fav.png')}}" type="image/x-icon">
     <style>
-        i.line-clamp2+p {
+        div.line-clamp2 {
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;

@@ -29,6 +29,6 @@ return array(
     'search' => 'Search',
     'brands' => 'Brands',
     'no_model_found' => 'No Model Found',
-    '' => '',
-    '' => '',
+    'total' => 'Total',
+    'showing_result' => 'Showing Results',
 );

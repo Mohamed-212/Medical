@@ -18,12 +18,12 @@
                     <div class="cv-banner-two-text cv-banner-three-text">
                         <h1>@lang('general.header_title')</h1>
                         <p>@lang('general.header_brief')</p>
-                        <a class="cv-btn">@lang('general.show_models')</a>
+                        <a href="{{route('website.models', config('website.devices')[0]['getBrands'][0]['id'])}}" class="cv-btn">@lang('general.show_models')</a>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="cv-banner-img-three">
-                        <img src="https://via.placeholder.com/400x648" alt="images" class="img-fluid"/>
+                        <img src="{{asset('assets/website-assets/images/banner3.png')}}" alt="images" class="img-fluid"/>
                     </div>
                 </div>
             </div>

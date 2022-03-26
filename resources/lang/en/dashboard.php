@@ -77,5 +77,5 @@ return array (
     'twitter' => 'Twitter',
     'more_info' => 'More info',
     'copyrights' => 'Copyright',
-    'all_right_reserved' => 'All rights reserved.',
+    'all_right_reserved' => 'All rights reserved',
 );

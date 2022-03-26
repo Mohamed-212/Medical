@@ -33,7 +33,7 @@
             <div class="row mb-5">
                 <div class="col-lg-5">
                     <div class="cv-about-img spacer-top">
-                        <img src="https://via.placeholder.com/360x520" alt="image" class="img-fluid"/>
+                        <img src="{{asset('assets/website-assets/images/about.png')}}" alt="image" class="img-fluid"/>
                     </div>
                 </div>
                 <div class="col-lg-7">

@@ -77,5 +77,5 @@ return array (
     'twitter' => 'تويتر',
     'more_info' => 'لمزيد من المعلومات',
     'copyrights' => 'حقوق النشر',
-    'all_right_reserved' => 'جميع الحقوق محفوظة.',
+    'all_right_reserved' => 'جميع الحقوق محفوظة',
 );

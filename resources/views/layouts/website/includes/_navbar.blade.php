@@ -14,7 +14,7 @@
                             <li><a href="{{route('website.home')}}">@lang('general.home')</a></li>
                             <li><a href="{{route('website.about')}}">@lang('general.about_us')</a></li>
                             <li class="cv-children-menu cv-mega-li"><a href="javascript:;">@lang('general.devices')</a>
-                                <div class="cv-mega-menu">
+                                <div class="cv-mega-menu row">
                                     @foreach(config('website.devices') as $device)
                                         <div class="cm-menu-list">
                                             <ul>
