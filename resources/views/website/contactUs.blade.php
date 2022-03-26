@@ -142,7 +142,7 @@
     <!-- testimonial end -->
     <!-- iframe start -->
     <div class="cv-contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12301.513435483917!2d-96.04069515802735!3d39.57362236131941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87be3e79433f6007%3A0x86baec447b34422!2sAmerica%20City%2C%20KS%2066540%2C%20USA!5e0!3m2!1sen!2sin!4v1588407931927!5m2!1sen!2sin" aria-hidden="false" tabindex="0"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d27626.586183715524!2d31.438138414238995!3d30.056266819517603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m5!1s0x14583da3cfc8a14b%3A0x2f4b58efb9c08a53!2zU3VuIE1hbGwsIDcwNSDYtNin2LHYuSDYp9mE2YXZitir2KfZgiwg2LLZh9ix2KfYoSDZhdiv2YrZhtipINmG2LXYsdiMINin2YTZhdmK2KvYp9mC2Iwg2Iwg2YXYr9mK2YbYqSDZhti12LHYjCDYstmH2LHYp9ih2IwgTmFzciBDaXR5!3m2!1d30.051000499999997!2d31.3934397!4m3!3m2!1d30.0631755!2d31.435134299999998!5e0!3m2!1sar!2seg!4v1648298164627!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <!-- iframe end -->
 

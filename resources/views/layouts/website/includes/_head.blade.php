@@ -39,6 +39,9 @@
         .cv-blog-single-box .cv-blog-data {
             padding: 20px 30px;
         }
+        #carouselExampleIndicators{
+            height: 350px;
+        }
     </style>
     @stack('styles')
 </head>
