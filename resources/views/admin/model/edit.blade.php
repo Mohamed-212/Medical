@@ -65,17 +65,24 @@
                                             </span>
                                             @enderror
                                         </div>
-                                        @foreach(['ar', 'en'] as $lang)
-                                            <div class="form-group">
-                                                {!! Html::decode(Form::label(null, __('dashboard.name_'.$lang) . ' <span class="text-bold text-danger">*</span>')) !!}
-                                                {!! Form::text('name_'.$lang, null, ['class' => 'form-control', 'placeholder' => __('dashboard.name_'.$lang), 'required' => true]) !!}
-                                                @error('name_'.$lang)
-                                                <span class="invalid-feedback" role="alert">
+                                        <div class="form-group">
+                                            {!! Html::decode(Form::label(null, __('dashboard.device_model') . ' <span class="text-bold text-danger">*</span>')) !!}
+                                            {!! Form::text('modeel', null, ['class' => 'form-control', 'placeholder' => __('dashboard.device_model'), 'required' => true]) !!}
+                                            @error('modeel')
+                                            <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
-                                                @enderror
-                                            </div>
-                                        @endforeach
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            {!! Html::decode(Form::label(null, __('dashboard.device_brand') . ' <span class="text-bold text-danger">*</span>')) !!}
+                                            {!! Form::text('brand', null, ['class' => 'form-control', 'placeholder' => __('dashboard.device_brand'), 'required' => true]) !!}
+                                            @error('brand')
+                                            <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
                                         @foreach(['ar', 'en'] as $lang)
                                             <div class="form-group">
                                                 {!! Html::decode(Form::label(null, __('dashboard.description_'.$lang) . ' <span class="text-bold text-danger">*</span>')) !!}

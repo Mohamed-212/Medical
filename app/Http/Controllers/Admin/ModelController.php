@@ -59,8 +59,8 @@ class ModelController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
-        $model_model->name_ar = $request->name_ar;
-        $model_model->name_en = $request->name_en;
+        $model_model->modeel = $request->modeel;
+        $model_model->brand = $request->brand;
         $model_model->description_en = $request->description_en;
         $model_model->description_ar = $request->description_ar;
         $model_model->brand_id = $request->brand_id;
@@ -124,8 +124,8 @@ class ModelController extends Controller
             if ($validator->fails()) {
                 return redirect()->back()->withErrors($validator);
             }
-            $model->name_ar = $request->name_ar;
-            $model->name_en = $request->name_en;
+            $model->modeel = $request->modeel;
+            $model->brand = $request->brand;
             $model->description_en = $request->description_en;
             $model->description_ar = $request->description_ar;
             $model->brand_id = $request->brand_id;

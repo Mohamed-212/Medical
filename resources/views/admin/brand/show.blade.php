@@ -32,16 +32,16 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
+                                    <div class="form-group">
+                                        {!! Html::decode(Form::label(null, __('dashboard.device'))) !!}
+                                        {!! Form::text('device_id', $brand->getDevice->name, ['class' => 'form-control', 'placeholder' => __('dashboard.device'), 'disabled' => true]) !!}
+                                    </div>
                                     @foreach(['ar', 'en'] as $lang)
                                         <div class="form-group">
                                             {!! Html::decode(Form::label(null, __('dashboard.name_'.$lang))) !!}
                                             {!! Form::text('name_'.$lang, $brand['name_'.$lang], ['class' => 'form-control', 'placeholder' => __('dashboard.name_'.$lang), 'disabled' => true]) !!}
                                         </div>
                                     @endforeach
-                                    <div class="form-group">
-                                        {!! Html::decode(Form::label(null, __('dashboard.device'))) !!}
-                                        {!! Form::text('device_id', $brand->getDevice->name, ['class' => 'form-control', 'placeholder' => __('dashboard.device'), 'disabled' => true]) !!}
-                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="card-footer">

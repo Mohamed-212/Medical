@@ -54,12 +54,14 @@
                                         {!! Html::decode(Form::label(null, __('dashboard.brand'))) !!}
                                         {!! Form::text('brand_id', $model->getBrand->name, ['class' => 'form-control', 'placeholder' => __('dashboard.brand'), 'disabled' => true]) !!}
                                     </div>
-                                    @foreach(['ar', 'en'] as $lang)
-                                        <div class="form-group">
-                                            {!! Html::decode(Form::label(null, __('dashboard.name_'.$lang))) !!}
-                                            {!! Form::text('name_'.$lang, $model['name_'.$lang], ['class' => 'form-control', 'placeholder' => __('dashboard.name_'.$lang), 'disabled' => true]) !!}
-                                        </div>
-                                    @endforeach
+                                    <div class="form-group">
+                                        {!! Html::decode(Form::label(null, __('dashboard.device_model'))) !!}
+                                        {!! Form::text('modeel', $model['model'], ['class' => 'form-control', 'placeholder' => __('dashboard.device_model'), 'disabled' => true]) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Html::decode(Form::label(null, __('dashboard.device_brand'))) !!}
+                                        {!! Form::text('brand', $model['model'], ['class' => 'form-control', 'placeholder' => __('dashboard.device_brand'), 'disabled' => true]) !!}
+                                    </div>
                                     @foreach(['ar', 'en'] as $lang)
                                         <div class="form-group">
                                             {!! Html::decode(Form::label(null, __('dashboard.description_'.$lang))) !!}

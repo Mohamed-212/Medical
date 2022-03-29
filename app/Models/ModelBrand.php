@@ -9,15 +9,15 @@ class ModelBrand extends Model
 
     protected $table = 'models';
     protected $fillable = [
-        'name_ar', 'name_en', 'description_ar', 'description_en', 'name', 'description', 'brand_id'
+        'modeel', 'brand', 'description_ar', 'description_en', 'name', 'description', 'brand_id'
     ];
     protected $appends = [
-      'name', 'description'
+        'name', 'description'
     ];
 
     public $validation_rules = [
-        'name_ar' => 'required',
-        'name_en' => 'required',
+        'modeel' => 'required',
+        'brand' => 'required',
         'description_ar' => 'required',
         'description_en' => 'required',
         'images' => 'required',
@@ -26,8 +26,8 @@ class ModelBrand extends Model
     ];
 
     public $edit_validation_rules = [
-        'name_ar' => 'required',
-        'name_en' => 'required',
+        'modeel' => 'required',
+        'brand' => 'required',
         'description_ar' => 'required',
         'description_en' => 'required',
         'images' => 'nullable',
@@ -37,10 +37,7 @@ class ModelBrand extends Model
 
     public function getNameAttribute()
     {
-        if (app()->getLocale() == 'ar')
-            return $this->attributes['name_ar'];
-        else
-            return $this->attributes['name_en'];
+        return $this->attributes['modeel'] . ', ' . $this->attributes['brand'];
     }
 
     public function getDescriptionAttribute()

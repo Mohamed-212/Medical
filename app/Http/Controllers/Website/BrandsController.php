@@ -14,10 +14,10 @@ class BrandsController extends Controller
         $name = $request->name;
         $like_search = ($name)? '%'.$name.'%' : '%' ;
         $brand = Brand::with(['getModels' => function($query) use($like_search){
-            $query->where('name_ar', 'LIKE', $like_search)->orWhere('name_en', 'LIKE', $like_search)->paginate(8);
+            $query->where('modeel', 'LIKE', $like_search)->orWhere('brand', 'LIKE', $like_search)->paginate(8);
         }])->where('id', $id)->first();
         $models = ModelBrand::where('brand_id', $id)->where(function($query) use($like_search){
-            $query->where('name_ar', 'LIKE', $like_search)->orWhere('name_en', 'LIKE', $like_search);
+            $query->where('modeel', 'LIKE', $like_search)->orWhere('brand', 'LIKE', $like_search);
         })->paginate(8);
         return view('website.brand', compact(['brand', 'models', 'name']));
     }

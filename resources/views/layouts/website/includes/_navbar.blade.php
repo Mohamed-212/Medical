@@ -13,21 +13,35 @@
                         <ul>
                             <li><a href="{{route('website.home')}}">@lang('general.home')</a></li>
                             <li><a href="{{route('website.about')}}">@lang('general.about_us')</a></li>
-                            <li class="cv-children-menu cv-mega-li"><a href="javascript:;">@lang('general.devices')</a>
-                                <div class="cv-mega-menu row">
+{{--                            <li class="cv-children-menu cv-mega-li"><a href="javascript:;">@lang('general.devices')</a>--}}
+{{--                                <div class="cv-mega-menu row">--}}
+{{--                                    @foreach(config('website.devices') as $device)--}}
+{{--                                        <div class="cm-menu-list">--}}
+{{--                                            <ul>--}}
+{{--                                                <li>--}}
+{{--                                                    <h3>{{$device->name}}</h3>--}}
+{{--                                                </li>--}}
+{{--                                                @foreach($device->getBrands as $brand)--}}
+{{--                                                    <li><a href="{{route('website.models', $brand->id)}}">{{$brand->name}}</a></li>--}}
+{{--                                                @endforeach--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                    @endforeach--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+                            <li class="cv-children-menu">
+                                <a href="javascript:;">@lang('general.devices')</a>
+                                <ul class="cv-sub-mmenu">
                                     @foreach(config('website.devices') as $device)
-                                        <div class="cm-menu-list">
-                                            <ul>
-                                                <li>
-                                                    <h3>{{$device->name}}</h3>
-                                                </li>
+                                        <li><h3>{{$device->name}}</h3>
+                                            <ul class="cv-sub-mmenu submenu">
                                                 @foreach($device->getBrands as $brand)
                                                     <li><a href="{{route('website.models', $brand->id)}}">{{$brand->name}}</a></li>
                                                 @endforeach
                                             </ul>
-                                        </div>
+                                        </li>
                                     @endforeach
-                                </div>
+                                </ul>
                             </li>
                             <li class="cv-children-menu">
                                 <a href="javascript:;">@lang('general.services')</a>

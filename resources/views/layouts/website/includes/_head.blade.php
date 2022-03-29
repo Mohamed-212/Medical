@@ -17,6 +17,35 @@
         <link rel="stylesheet" href="{{asset('assets/website-assets/css/style-rtl.css')}}">
         <!-- flag icon -->
         <link rel="stylesheet" href="{{asset('assets/admin-assets/plugins/flag-icon-css/css/flag-icon-rtl.min.css')}}">
+        <style>
+            @media screen and (min-width: 1200px) {
+                .cv-sub-mmenu li {
+                    position: relative;
+                }
+
+                .submenu {
+                    display: none;
+                    position: absolute;
+                    right: 100%;
+                    top: 0px;
+                }
+
+                .cv-sub-mmenu > li:hover {
+                    background-color: #f1f1f1
+                }
+
+                .cv-sub-mmenu > li:hover > .submenu {
+                    display: block;
+                }
+                ul li h3{
+                    font-size: 18px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: #3cbcff;
+                    letter-spacing: 2px;
+                }
+            }
+        </style>
     @else
         <link rel="stylesheet" href="{{asset('assets/website-assets/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/website-assets/css/all.min.css')}}">
@@ -25,6 +54,35 @@
         <link rel="stylesheet" href="{{asset('assets/website-assets/css/style.css')}}">
         <!-- flag icon -->
         <link rel="stylesheet" href="{{asset('assets/admin-assets/plugins/flag-icon-css/css/flag-icon.min.css')}}">
+        <style>
+            @media screen and (min-width: 1200px) {
+                .cv-sub-mmenu li {
+                    position: relative;
+                }
+
+                .submenu {
+                    display: none;
+                    position: absolute;
+                    left: 100%;
+                    top: 0px;
+                }
+
+                .cv-sub-mmenu > li:hover {
+                    background-color: #f1f1f1
+                }
+
+                .cv-sub-mmenu > li:hover > .submenu {
+                    display: block;
+                }
+                ul li h3{
+                    font-size: 18px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: #3cbcff;
+                    letter-spacing: 2px;
+                }
+            }
+        </style>
     @endif
 
     <link rel="shortcut icon" href="{{asset('assets/website-assets/images/fav.png')}}" type="image/x-icon">
@@ -41,6 +99,24 @@
         }
         #carouselExampleIndicators{
             height: 350px;
+        }
+        @media screen and (max-width: 1199px){
+            ul.cv-sub-mmenu li h3 {
+                font-size: 18px;
+                font-weight: 600;
+                padding: 12px 15px;
+                color: #3cbcff;
+                text-transform: capitalize;
+                margin-bottom: 0;
+            }
+            li>ul>li a {
+                color: #222;
+                padding: 10px 15px;
+                display: block;
+            }
+            li ul li{
+                padding-left: 20px;
+            }
         }
     </style>
     @stack('styles')

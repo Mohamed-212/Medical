@@ -9,6 +9,9 @@
         .cv-arrival{
             background: #f8fdff;
         }
+        tr:not(:last-child){
+            border-bottom: 1px solid #d4f0ff;
+        }
     </style>
 @endpush
 
@@ -61,7 +64,22 @@
                         </div>
                         <div class="cv-blog-data col-md-6">
                             <h2 class="cv-blog-title">{{$model->name}}</h2>
-                            {!! $model->description !!}
+                            <table class="w-100">
+                                <tbody>
+                                    <tr>
+                                        <th>@lang('general.device_brand')</th>
+                                        <td>{{$model->brand}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>@lang('general.device_model')</th>
+                                        <td>{{$model->modeel}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="pe-3">@lang('general.specification')</th>
+                                        <td>{!! $model->description !!}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

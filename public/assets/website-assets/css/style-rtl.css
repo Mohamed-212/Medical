@@ -3119,8 +3119,6 @@ ul.cv-language-selector {
         transform: scaleY(1);
         visibility: visible;
         opacity: 1;
-        max-height: 434px;
-        overflow-y: auto;
     }
     .cm-menu-list {
         display: inline-block;

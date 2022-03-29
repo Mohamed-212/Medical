@@ -99,6 +99,15 @@
                 </div>
                 <div class="modal-body">
                     {!! Form::open(['route' => 'admin.brands.store', 'method' => 'post', 'id' => 'create_form']) !!}
+                    <div class="form-group">
+                        {!! Html::decode(Form::label(null, __('dashboard.device') . ' <span class="text-bold text-danger">*</span>')) !!}
+                        {!! Form::select('device_id', $devices, null, ['placeholder' => __('dashboard.choose one...'), 'class' => 'custom-select']) !!}
+                        @error('device_id')
+                        <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
                     @foreach(['ar', 'en'] as $lang)
                         <div class="form-group">
                             {!! Html::decode(Form::label(null, __('dashboard.name_'.$lang) . ' <span class="text-bold text-danger">*</span>')) !!}
@@ -110,15 +119,6 @@
                             @enderror
                         </div>
                     @endforeach
-                    <div class="form-group">
-                        {!! Html::decode(Form::label(null, __('dashboard.device') . ' <span class="text-bold text-danger">*</span>')) !!}
-                        {!! Form::select('device_id', $devices, null, ['placeholder' => __('dashboard.choose one...'), 'class' => 'custom-select']) !!}
-                        @error('device_id')
-                        <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
                     {!! Form::close() !!}
                 </div>
                 <div class="modal-footer justify-content-between">
