@@ -12,6 +12,11 @@
         tr:not(:last-child){
             border-bottom: 1px solid #d4f0ff;
         }
+        .modal-dialog{
+            width: 80%;
+            max-width: unset;
+            margin: 1.75rem auto;
+        }
     </style>
 @endpush
 
@@ -79,6 +84,14 @@
                                         <td>{!! $model->description !!}</td>
                                     </tr>
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="2">
+                                            <button type="button" class="cv-btn submitForm mt-4 w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">@lang('general.request_quote')</button>
+                                            @include('layouts.website.includes._flash_messages')
+                                        </td>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                     </div>
@@ -135,6 +148,61 @@
         </div>
     </div>
     <!-- new arrivals end -->
+    <!-- Modal -->
+    <div class="modal fade modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {!! Form::open(['route' => 'website.models.mail.send', 'method' => 'post', 'id' => 'create_form']) !!}
+                    {!! Form::hidden('device', $model->name) !!}
+                    <div class="row mb-3">
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.first_name') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => __('general.first_name'), 'required' => true]) !!}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.last_name') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => __('general.last_name'), 'required' => true]) !!}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.email') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => __('general.email'), 'required' => true]) !!}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.phone') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => __('general.phone'), 'required' => true]) !!}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.company') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::text('company', null, ['class' => 'form-control', 'placeholder' => __('general.company'), 'required' => true]) !!}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.position_title') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::text('position_title', null, ['class' => 'form-control', 'placeholder' => __('general.position_title'), 'required' => true]) !!}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            {!! Html::decode(Form::label(null, __('general.how_may_we_help_you') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::textarea('message', null, ['class' => 'form-control', 'required' => true]) !!}
+                        </div>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="submit" form="create_form" class="btn btn-success">@lang('general.send')</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
 

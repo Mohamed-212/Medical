@@ -59,6 +59,12 @@
                         <p>@lang('dashboard.company_info')</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('admin.mail.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-mail-bulk"></i>
+                        <p>@lang('dashboard.mail_setting')</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

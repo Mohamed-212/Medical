@@ -18,7 +18,7 @@
                     <div class="cv-banner-two-text cv-banner-three-text">
                         <h1>@lang('general.header_title')</h1>
                         <p>@lang('general.header_brief')</p>
-                        <a href="{{route('website.models', config('website.devices')[0]['getBrands'][0]['id'])}}" class="cv-btn">@lang('general.show_models')</a>
+                        <a href="{{route('website.models', config('website.devices')[0]['get_brands'][0]['id'])}}" class="cv-btn">@lang('general.show_models')</a>
                     </div>
                 </div>
                 <div class="col-md-5">

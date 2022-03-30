@@ -30,10 +30,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        config(['website.setup' => CompanySetups::get()->keyBy('key')->toArray() ]);
-        config(['website.branches' => Branches::get() ]);
-        config(['website.devices' => Device::with('getBrands')->get() ]);
-        config(['website.brands' => Brand::with('getModels')->get() ]);
-        config(['website.services' => Services::get() ]);
     }
 }

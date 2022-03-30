@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\CompanySetups;
+use App\Models\MailSettings;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Config;
 
 class CompanyController extends Controller
 {
@@ -59,4 +62,41 @@ class CompanyController extends Controller
         }
         return redirect()->route('admin.company.index')->with('success', __('dashboard.process_successfully'));
     }
+
+    /**
+     * Display a mail setting information.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function mailSetting()
+    {
+        $setup = MailSettings::first();
+        $setup['to'] = json_decode($setup->to);
+        return view('admin.mail_setting.edit', compact(['setup']));
+    }
+
+    /**
+     * Update the company info.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function updateMail(Request $request)
+    {
+        $setup_model = new MailSettings();
+        $validator = Validator::make($request->all(), $setup_model->validation_mail);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        $setup = MailSettings::first();
+        $setup->host = $request->host;
+        $setup->port = $request->port;
+        $setup->encryption = $request->encryption;
+        $setup->username = $request->username;
+        $setup->password = $request->password;
+        $setup->to = json_encode($request->to);
+        $setup->save();
+        return redirect()->route('admin.mail.index')->with('success', __('dashboard.process_successfully'));
+    }
+
 }

@@ -33,10 +33,10 @@
                                 <a href="javascript:;">@lang('general.devices')</a>
                                 <ul class="cv-sub-mmenu">
                                     @foreach(config('website.devices') as $device)
-                                        <li><h3>{{$device->name}}</h3>
+                                        <li><h3>{{$device['name']}}</h3>
                                             <ul class="cv-sub-mmenu submenu">
-                                                @foreach($device->getBrands as $brand)
-                                                    <li><a href="{{route('website.models', $brand->id)}}">{{$brand->name}}</a></li>
+                                                @foreach($device['get_brands'] as $brand)
+                                                    <li><a href="{{route('website.models', $brand['id'])}}">{{$brand['name']}}</a></li>
                                                 @endforeach
                                             </ul>
                                         </li>
@@ -48,7 +48,7 @@
                                 <ul class="cv-sub-mmenu">
                                     @if(config('website.services'))
                                         @foreach(config('website.services') as $service)
-                                            <li><a href="{{route('website.services.show', $service->id)}}">{{$service->name}}</a></li>
+                                            <li><a href="{{route('website.services.show', $service['id'])}}">{{$service['name']}}</a></li>
                                         @endforeach
                                     @endif
                                 </ul>

@@ -46,6 +46,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('company', 'CompanyController@index')->name('company.index');
         Route::post('company/update', 'CompanyController@update')->name('company.update');
 
+        // Mail Routes...
+        Route::get('mail-setting', 'CompanyController@mailSetting')->name('mail.index');
+        Route::post('mail-setting/update', 'CompanyController@updateMail')->name('mail.update');
+
     });
 
     Route::group(['namespace' => 'Website', 'as' => 'website.'], function () {
@@ -54,6 +58,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['lo
         Route::get('/about-us', 'AboutUsController@index')->name('about');
         Route::get('/brand/{id}/models', 'BrandsController@index')->name('models');
         Route::get('/models/{id}', 'ModelsController@show')->name('models.show');
+        Route::post('/models/send/inquiry', 'ModelsController@sendInquiry')->name('models.mail.send');
         Route::get('/services/{id}', 'ServicesController@show')->name('services.show');
         Route::get('/contact-us', 'ContactUsController@index')->name('contact');
     });

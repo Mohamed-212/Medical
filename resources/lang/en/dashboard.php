@@ -80,4 +80,11 @@ return array (
     'more_info' => 'More info',
     'copyrights' => 'Copyright',
     'all_right_reserved' => 'All rights reserved',
+    'mail_setting' => 'Mail Setting',
+    'port' => 'Port',
+    'host' => 'Host',
+    'encryption' => 'Encryption',
+    'username' => 'Email',
+    'password' => 'Password',
+    'send_to' => 'Send To',
 );

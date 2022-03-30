@@ -34,4 +34,13 @@ return array(
     'device_brand' => 'Brand',
     'device_model' => 'Model',
     'specification' => 'Specification',
+    'request_quote' => 'Request A Quote',
+    'first_name' => 'First Name',
+    'last_name' => 'Last Name',
+    'company' => 'Company',
+    'position_title' => 'Position Title',
+    'how_may_we_help_you' => 'How may we help you?',
+    'send' => 'Send',
+    'send_failed_try_again_later' => 'send failed try again later',
+    'message_sent' => 'Message sent',
 );

@@ -80,4 +80,11 @@ return array (
     'more_info' => 'لمزيد من المعلومات',
     'copyrights' => 'حقوق النشر',
     'all_right_reserved' => 'جميع الحقوق محفوظة',
+    'mail_setting' => 'إعدادات الإميل',
+    'port' => 'البوابة',
+    'host' => 'الاستضافة',
+    'encryption' => 'التشفير',
+    'username' => 'البريد الألكتروني',
+    'password' => 'كلمة المرور',
+    'send_to' => 'ارسل إلى',
 );

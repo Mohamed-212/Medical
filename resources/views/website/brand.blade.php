@@ -90,7 +90,7 @@
                             <h2 class="cv-sidebar-title">@lang('general.brands')</h2>
                             <ul>
                                 @foreach(config('website.brands') as $brand_model)
-                                    <li><a href="{{route('website.models', $brand_model->id)}}">{{$brand_model->name}}</a></li>
+                                    <li><a href="{{route('website.models', $brand_model['id'])}}">{{$brand_model['name']}}</a></li>
                                 @endforeach
                             </ul>
                         </div>

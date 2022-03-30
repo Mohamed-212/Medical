@@ -34,4 +34,13 @@ return array(
     'device_brand' => 'الماركة',
     'device_model' => 'الموديل',
     'specification' => 'التفاصيل',
+    'request_quote' => 'طلب عرض أسعار',
+    'first_name' => 'الاسم الأول',
+    'last_name' => 'الاسم الاخير',
+    'company' => 'الشركة',
+    'position_title' => 'المسمى الوظيفي',
+    'how_may_we_help_you' => 'كيف يمكن أن نساعدك؟',
+    'send' => 'إرسال',
+    'send_failed_try_again_later' => 'فشل الإرسال حاول مرة أخرى لاحقًا',
+    'message_sent' => 'تم الارسال',
 );
