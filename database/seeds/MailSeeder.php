@@ -17,7 +17,7 @@ class MailSeeder extends Seeder
             'username' => 'mohamedhassan225588@gmail.com',
             'password' => 'Mhmm199801123211442',
             'encryption' => 'tls',
-            'to' => json_encode(['mohamed@212solutionsllc.com'])
+            'to' => json_encode(['abdallah.kamal.2013@gmail.com'])
         ]);
     }
 }

@@ -17,6 +17,9 @@
             max-width: unset;
             margin: 1.75rem auto;
         }
+        .bg-info{
+            background-color:#b7b7b7!important
+        }
     </style>
 @endpush
 
@@ -45,7 +48,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="cv-blog-single-box row">
-                        <div id="carouselExampleIndicators" class="carousel slide col-md-6" data-bs-ride="carousel">
+                        <div id="carouselExampleIndicators" class="carousel slide col-md-5" data-bs-ride="carousel">
                             <div class="carousel-indicators">
                                 @foreach($model->getImages as $index => $image)
                                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$index}}" @if($index == 0) class="active" aria-current="true" @endif aria-label="Slide {{$index+1}}"></button>
@@ -54,7 +57,7 @@
                             <div class="carousel-inner">
                                 @foreach($model->getImages as $index => $image)
                                     <div class="carousel-item @if($index == 0) active @endif ">
-                                        <img src="{{$image->image_path}}" style="height: 350px" class="d-block w-100" alt="image">
+                                        <img src="{{$image->image_path}}" style="height: 350px" class="d-block m-auto" alt="image">
                                     </div>
                                 @endforeach
                             </div>
@@ -67,7 +70,7 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                        <div class="cv-blog-data col-md-6">
+                        <div class="cv-blog-data col-md-7">
                             <h2 class="cv-blog-title">{{$model->name}}</h2>
                             <table class="w-100">
                                 <tbody>
@@ -79,10 +82,6 @@
                                         <th>@lang('general.device_model')</th>
                                         <td>{{$model->modeel}}</td>
                                     </tr>
-                                    <tr>
-                                        <th class="pe-3">@lang('general.specification')</th>
-                                        <td>{!! $model->description !!}</td>
-                                    </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
@@ -93,6 +92,12 @@
                                     </tr>
                                 </tfoot>
                             </table>
+                        </div>
+                        <div class="col-12 mt-4">
+                            <h3>@lang('general.specification')</h3>
+                            <div>
+                                {!! $model->description !!}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="cv-foot-box cv-foot-logo">
-                    <img src="{{asset('assets/website-assets/images/logo.svg')}}" alt="image" class="img-fluid"/>
+                    <img src="{{asset('assets/website-assets/images/logo-footer2.png')}}" style="width: 255px;" alt="image" class="img-fluid"/>
                     <p>@lang('general.footer_brief')</p>
                     <div class="cv-foot-payment">
                         <a href="javascript:;"><img src="{{asset('assets/website-assets/images/pay1.png')}}" alt="image" class="img-fluid"/></a>
@@ -21,8 +21,8 @@
                         @if(config('website.branches'))
                             @foreach(config('website.branches') as $branch)
                                 <li>
-                                    <a href="{{route('website.contact')}}">{{$branch->name}}</a>
-                                    <p>{{$branch->address}}</p>
+                                    <a href="{{route('website.contact')}}">{{$branch['name']}}</a>
+{{--                                    <p>{{$branch['address']}}</p>--}}
                                 </li>
                             @endforeach
                         @else

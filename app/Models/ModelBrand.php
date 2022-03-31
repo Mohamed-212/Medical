@@ -37,7 +37,7 @@ class ModelBrand extends Model
 
     public function getNameAttribute()
     {
-        return $this->attributes['modeel'] . ', ' . $this->attributes['brand'];
+        return $this->attributes['modeel'] . ' ' . $this->attributes['brand'];
     }
 
     public function getDescriptionAttribute()
