@@ -9,7 +9,7 @@ class ModelBrand extends Model
 
     protected $table = 'models';
     protected $fillable = [
-        'modeel', 'brand', 'description_ar', 'description_en', 'name', 'description', 'brand_id'
+        'modeel', 'brand', 'description_ar', 'description_en', 'name', 'description', 'brand_id', 'availability', 'condition'
     ];
     protected $appends = [
         'name', 'description'
@@ -20,6 +20,8 @@ class ModelBrand extends Model
         'brand' => 'required',
         'description_ar' => 'required',
         'description_en' => 'required',
+        'condition' => 'required',
+        'availability' => 'required',
         'images' => 'required',
         'images.*' => 'required|mimes:jpeg,jpg,png',
         'brand_id' => 'required|exists:brands,id'
@@ -30,6 +32,8 @@ class ModelBrand extends Model
         'brand' => 'required',
         'description_ar' => 'required',
         'description_en' => 'required',
+        'condition' => 'required',
+        'availability' => 'required',
         'images' => 'nullable',
         'images.*' => 'nullable|mimes:jpeg,jpg,png',
         'brand_id' => 'required|exists:brands,id'

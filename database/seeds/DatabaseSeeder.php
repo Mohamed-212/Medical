@@ -13,5 +13,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);
         $this->call(MailSeeder::class);
+        $this->call(DeviceSeeder::class);
+        $this->call(BrandSeeder::class);
+        $this->call(ModelSeeder::class);
+        $this->call(ServiceSeeder::class);
+        $this->call(BranchSeeder::class);
+        $this->call(CompanySeeder::class);
     }
 }

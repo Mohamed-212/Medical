@@ -13,9 +13,9 @@ class MailSeeder extends Seeder
     {
         \App\Models\MailSettings::create([
             'port' => '587',
-            'host' => 'smtp.gmail.com',
-            'username' => 'mohamedhassan225588@gmail.com',
-            'password' => 'Mhmm199801123211442',
+            'host' => 'mail.ammedical.co',
+            'username' => 'info@ammedical.co',
+            'password' => '@ammedical.co',
             'encryption' => 'tls',
             'to' => json_encode(['abdallah.kamal.2013@gmail.com'])
         ]);

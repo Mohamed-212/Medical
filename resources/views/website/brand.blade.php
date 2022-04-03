@@ -89,7 +89,7 @@
                         <div class="cv-widget cv-product-category">
                             <h2 class="cv-sidebar-title">@lang('general.brands')</h2>
                             <ul>
-                                @foreach(config('website.brands') as $brand_model)
+                                @foreach(\App\Helper\Helper::brands() as $brand_model)
                                     <li><a href="{{route('website.models', $brand_model['id'])}}">{{$brand_model['name']}}</a></li>
                                 @endforeach
                             </ul>

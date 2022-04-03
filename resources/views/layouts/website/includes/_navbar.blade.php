@@ -32,8 +32,8 @@
                             <li class="cv-children-menu">
                                 <a href="javascript:;">@lang('general.devices')</a>
                                 <ul class="cv-sub-mmenu">
-                                    @foreach(config('website.devices') as $device)
-                                        <li><h3>{{$device['name']}}</h3>
+                                    @foreach(\App\Helper\Helper::devices() as $device)
+                                        <li><h3 style="font-size: 17px;text-transform: none;letter-spacing: 1px;">{{$device['name']}}</h3>
                                             <ul class="cv-sub-mmenu submenu">
                                                 @foreach($device['get_brands'] as $brand)
                                                     <li><a href="{{route('website.models', $brand['id'])}}" target="_blank">{{$brand['name']}}</a></li>
@@ -46,8 +46,8 @@
                             <li class="cv-children-menu">
                                 <a href="javascript:;">@lang('general.services')</a>
                                 <ul class="cv-sub-mmenu">
-                                    @if(config('website.services'))
-                                        @foreach(config('website.services') as $service)
+                                    @if(\App\Helper\Helper::services())
+                                        @foreach(\App\Helper\Helper::services() as $service)
                                             <li><a href="{{route('website.services.show', $service['id'])}}" target="_blank">{{$service['name']}}</a></li>
                                         @endforeach
                                     @endif

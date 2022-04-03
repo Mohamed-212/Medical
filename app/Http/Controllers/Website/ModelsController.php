@@ -21,15 +21,16 @@ class ModelsController extends Controller
     {
         $setup = MailSettings::first();
         $emails = json_decode($setup->to);
-//        config(['mail.mailers.smtp.host' => $setup->host]);
-//        config(['mail.mailers.smtp.port' => $setup->port]);
-//        config(['mail.mailers.smtp.encryption' => $setup->encryption]);
-//        config(['mail.mailers.smtp.username' => $setup->username]);
-//        config(['mail.mailers.smtp.password' => $setup->password]);
         $details = $request->all();
+        $about = 'service';
+        if($request->device){
+            $about = 'device';
+        }
+        $details['about'] = $about;
+        $details['mail_message'] = $request->message;
         Mail::send('emails.inquiry', $details, function($message) use ($emails, $request)
         {
-            $message->to($emails)->subject('This is test e-mail');
+            $message->to($emails)->subject('AM Medical Inquiry');
             $message->from($request->email, $request->first_name . $request->last_name);
             $message->replyTo($request->email, $request->first_name . $request->last_name);
         });

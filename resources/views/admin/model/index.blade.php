@@ -52,8 +52,8 @@
                                     <tr>
                                         <th>@lang('dashboard.sn')</th>
                                         <th>@lang('dashboard.name')</th>
-                                        <th>@lang('dashboard.brand')</th>
-                                        <th>@lang('dashboard.device')</th>
+                                        <th>@lang('dashboard.availability')</th>
+                                        <th>@lang('dashboard.condition')</th>
                                         <th>@lang('dashboard.actions')</th>
                                     </tr>
                                     </thead>
@@ -62,8 +62,8 @@
                                         <tr>
                                             <td>{{ $index + 1 }}</td>
                                             <td>{{$model->name}}</td>
-                                            <td>{{$model->getBrand->name}}</td>
-                                            <td>{{$model->getBrand->getDevice->name}}</td>
+                                            <td>@lang('dashboard.'.$model->availability)</td>
+                                            <td>@lang('dashboard.'.$model->condition)</td>
                                             <td>
                                                 <a href="{{route('admin.models.show', $model->id)}}" class="btn btn-info"><i class="fas fa-eye"></i></a>
                                                 <a href="{{route('admin.models.edit', $model->id)}}" class="btn btn-success"><i class="fas fa-edit"></i></a>

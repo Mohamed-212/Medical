@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="cv-about-content">
-                        <p>{!! config('website.setup')['about_us_'.app()->getLocale()]['value'] !!}</p>
+                        <p>{!! \App\Helper\Helper::setup()['about_us_'.app()->getLocale()]['value'] !!}</p>
                     </div>
                 </div>
             </div>

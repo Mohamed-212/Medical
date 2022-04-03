@@ -47,8 +47,8 @@
                         </div>
                         <div class="cv-contact-text" style="min-height: 76px">
                             <h3>@lang('general.contact_numbers')</h3>
-                            <p>{{config('website.setup')['mobile']['value']}}</p>
-                            <p>{{config('website.setup')['telephone']['value']}}</p>
+                            <p>{{\App\Helper\Helper::setup()['mobile']['value']}}</p>
+                            <p>{{\App\Helper\Helper::setup()['telephone']['value']}}</p>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="cv-contact-text" style="min-height: 76px">
                             <h3>@lang('general.email')</h3>
-                            <p>{{config('website.setup')['email']['value']}}</p>
+                            <p>{{\App\Helper\Helper::setup()['email']['value']}}</p>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                         </div>
                         <div class="cv-contact-text" style="min-height: 76px">
                             <h3>@lang('general.address')</h3>
-                            <p>{{config('website.setup')['address_'.app()->getLocale()]['value']}}</p>
+                            <p>{{\App\Helper\Helper::setup()['address_'.app()->getLocale()]['value']}}</p>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
             <div class="row">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        @foreach(config('website.branches') as $branch)
+                        @foreach(\App\Helper\Helper::branches() as $branch)
                             <div class="swiper-slide">
                                 <div class="cv-testi-box">
                                     <div class="cv-testi-data">
@@ -123,11 +123,11 @@
                                                 </svg>
                                             </div>
                                             <div class="cv-testi-name">
-                                                <h1>{{$branch->name}}</h1>
-                                                <p>{{$branch->email}}</p>
-                                                <p>{{$branch->address}}</p>
-                                                <p>{{$branch->phone}}</p>
-                                                <p>{{$branch->telephone}}</p>
+                                                <h1>{{$branch['name']}}</h1>
+                                                <p>{{$branch['email']}}</p>
+                                                <p>{{$branch['address']}}</p>
+                                                <p>{{$branch['mobile']}}</p>
+                                                <p>{{$branch['telephone']}}</p>
                                             </div>
                                         </div>
                                     </div>

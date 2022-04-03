@@ -14,6 +14,11 @@
         <!-- slick -->
         <link rel="stylesheet" href="{{asset('assets/admin-assets/slick/slick.css')}}">
         <link rel="stylesheet" href="{{asset('assets/admin-assets/slick/slick-theme.css')}}">
+        <style>
+            .slick-prev {
+                left: -30px;
+            }
+        </style>
     @endif
 
     <style>
@@ -96,11 +101,25 @@
     <!-- Page specific script -->
     <script>
         $(function () {
+
+            @if(app()->getLocale() == 'ar')
+
+            $('.multiple-items').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                rtl: true
+            });
+
+            @else
+
             $('.multiple-items').slick({
                 infinite: true,
                 slidesToShow: 3,
                 slidesToScroll: 1
             });
+
+            @endif
             $(".summernote").each(function() {
                 $(this).summernote('disable');
             });

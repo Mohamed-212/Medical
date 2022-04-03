@@ -9,6 +9,14 @@
         .cv-arrival{
             background: #f8fdff;
         }
+        .bg-info {
+            background-color: #b7b7b7 !important
+        }
+        .modal-dialog {
+            width: 80%;
+            max-width: unset;
+            margin: 1.75rem auto;
+        }
     </style>
 @endpush
 
@@ -37,7 +45,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="cv-blog-single-box row">
-                        <div id="carouselExampleIndicators" class="carousel slide col-md-6" data-bs-ride="carousel">
+                        <div id="carouselExampleIndicators" class="carousel slide col-md-5" data-bs-ride="carousel">
                             <div class="carousel-indicators">
                                 @foreach($service->getImages as $index => $image)
                                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{$index}}" @if($index == 0) class="active" aria-current="true" @endif aria-label="Slide {{$index+1}}"></button>
@@ -50,18 +58,37 @@
                                     </div>
                                 @endforeach
                             </div>
-                            <button class="carousel-control-prev bg-info" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next bg-info" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                            @if(app()->getLocale() == 'ar')
+                                <button class="carousel-control-next bg-info" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                                <button class="carousel-control-prev bg-info" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                            @else
+                                <button class="carousel-control-prev bg-info" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next bg-info" type="button"
+                                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            @endif
                         </div>
-                        <div class="cv-blog-data col-md-6">
+                        <div class="cv-blog-data col-md-7">
                             <h2 class="cv-blog-title">{{$service->name}}</h2>
                             {!! $service->description !!}
+                            <button type="button" class="cv-btn submitForm mt-4 w-100"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">@lang('general.request_quote')</button>
+                            @include('layouts.website.includes._flash_messages')
                         </div>
                     </div>
                 </div>
@@ -116,6 +143,62 @@
         </div>
     </div>
     <!-- new arrivals end -->
+    <!-- Modal -->
+    <div class="modal fade modal-dialog-scrollable" id="exampleModal" tabindex="-1"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {!! Form::open(['route' => 'website.models.mail.send', 'method' => 'post', 'id' => 'create_form']) !!}
+                    {!! Form::hidden('service', $service->name) !!}
+                    <div class="row mb-3">
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.first_name') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => __('general.first_name'), 'required' => true]) !!}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.last_name') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => __('general.last_name'), 'required' => true]) !!}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.email') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => __('general.email'), 'required' => true]) !!}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.phone') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::text('phone', null, ['class' => 'form-control', 'placeholder' => __('general.phone'), 'required' => true]) !!}
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.company') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::text('company', null, ['class' => 'form-control', 'placeholder' => __('general.company'), 'required' => true]) !!}
+                        </div>
+                        <div class="form-group col-md-6">
+                            {!! Html::decode(Form::label(null, __('general.position_title') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::text('position_title', null, ['class' => 'form-control', 'placeholder' => __('general.position_title'), 'required' => true]) !!}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            {!! Html::decode(Form::label(null, __('general.how_may_we_help_you') . ' <span class="text-bold text-danger">*</span>')) !!}
+                            {!! Form::textarea('message', null, ['class' => 'form-control', 'required' => true]) !!}
+                        </div>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="submit" form="create_form" class="btn btn-success">@lang('general.send')</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection
 

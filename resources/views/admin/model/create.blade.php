@@ -57,8 +57,8 @@
                                         {!! Form::text('modeel', null, ['class' => 'form-control', 'placeholder' => __('dashboard.device_model'), 'required' => true]) !!}
                                         @error('modeel')
                                         <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
@@ -68,6 +68,24 @@
                                         <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Html::decode(Form::label(null, __('dashboard.availability') . ' <span class="text-bold text-danger">*</span>')) !!}
+                                        {!! Form::select('availability', ['in_stock' => __('dashboard.in_stock'), 'out_of_stock' => __('dashboard.out_of_stock')], null, ['placeholder' => __('dashboard.choose one...'), 'class' => 'custom-select']) !!}
+                                        @error('availability')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Html::decode(Form::label(null, __('dashboard.condition') . ' <span class="text-bold text-danger">*</span>')) !!}
+                                        {!! Form::select('condition', ['new' => __('dashboard.new'), 'refurbished' => __('dashboard.refurbished'), 'used' => __('dashboard.used')], null, ['placeholder' => __('dashboard.choose one...'), 'class' => 'custom-select']) !!}
+                                        @error('condition')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                         @enderror
                                     </div>
                                     @foreach(['ar', 'en'] as $lang)

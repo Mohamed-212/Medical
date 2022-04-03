@@ -18,6 +18,11 @@
         <!-- slick -->
         <link rel="stylesheet" href="{{asset('assets/admin-assets/slick/slick.css')}}">
         <link rel="stylesheet" href="{{asset('assets/admin-assets/slick/slick-theme.css')}}">
+        <style>
+            .slick-prev {
+                left: -30px;
+            }
+        </style>
     @endif
 
     <style>
@@ -83,6 +88,24 @@
                                                 </span>
                                             @enderror
                                         </div>
+                                        <div class="form-group">
+                                            {!! Html::decode(Form::label(null, __('dashboard.availability') . ' <span class="text-bold text-danger">*</span>')) !!}
+                                            {!! Form::select('availability', ['in_stock' => __('dashboard.in_stock'), 'out_of_stock' => __('dashboard.out_of_stock')], null, ['placeholder' => __('dashboard.choose one...'), 'class' => 'custom-select']) !!}
+                                            @error('availability')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            {!! Html::decode(Form::label(null, __('dashboard.condition') . ' <span class="text-bold text-danger">*</span>')) !!}
+                                            {!! Form::select('condition', ['new' => __('dashboard.new'), 'refurbished' => __('dashboard.refurbished'), 'used' => __('dashboard.used')], null, ['placeholder' => __('dashboard.choose one...'), 'class' => 'custom-select']) !!}
+                                            @error('condition')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
                                         @foreach(['ar', 'en'] as $lang)
                                             <div class="form-group">
                                                 {!! Html::decode(Form::label(null, __('dashboard.description_'.$lang) . ' <span class="text-bold text-danger">*</span>')) !!}
@@ -94,12 +117,14 @@
                                                 @enderror
                                             </div>
                                         @endforeach
-                                        <div class="multiple-items">
-                                            @foreach($model->getImages as $image)
-                                                <div>
-                                                    <img src="{{$image->image_path}}" alt="model" class="w-100">
-                                                </div>
-                                            @endforeach
+                                        <div class="col-md-12">
+                                            <div class="multiple-items">
+                                                @foreach($model->getImages as $image)
+                                                    <div>
+                                                        <img src="{{$image->image_path}}" alt="model" class="w-100">
+                                                    </div>
+                                                @endforeach
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             {!! Html::decode(Form::label(null, __('dashboard.images'))) !!}
@@ -148,11 +173,26 @@
                     'error': "@lang('dashboard.dropify_error')"
                 },
             });
+
+            @if(app()->getLocale() == 'ar')
+
+            $('.multiple-items').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                rtl: true
+            });
+
+            @else
+
             $('.multiple-items').slick({
                 infinite: true,
                 slidesToShow: 3,
                 slidesToScroll: 1
             });
+
+            @endif
+
             $('.summernote').summernote();
             bsCustomFileInput.init();
         });

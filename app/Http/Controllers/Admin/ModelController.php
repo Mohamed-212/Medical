@@ -61,6 +61,8 @@ class ModelController extends Controller
         }
         $model_model->modeel = $request->modeel;
         $model_model->brand = $request->brand;
+        $model_model->availability = $request->availability;
+        $model_model->condition = $request->condition;
         $model_model->description_en = $request->description_en;
         $model_model->description_ar = $request->description_ar;
         $model_model->brand_id = $request->brand_id;
@@ -126,6 +128,8 @@ class ModelController extends Controller
             }
             $model->modeel = $request->modeel;
             $model->brand = $request->brand;
+            $model->availability = $request->availability;
+            $model->condition = $request->condition;
             $model->description_en = $request->description_en;
             $model->description_ar = $request->description_ar;
             $model->brand_id = $request->brand_id;

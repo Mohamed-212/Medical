@@ -18,6 +18,8 @@ class CreateModelsTable extends Migration
             $table->foreignId('brand_id')->constrained('brands')->cascadeOnDelete();
             $table->string('modeel');
             $table->string('brand');
+            $table->enum('availability', ['in_stock', 'out_of_stock']);
+            $table->enum('condition', ['refurbished', 'new', 'used']);
             $table->text('description_ar');
             $table->text('description_en');
             $table->timestamps();

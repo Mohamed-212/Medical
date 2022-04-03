@@ -43,4 +43,13 @@ return array(
     'send' => 'Send',
     'send_failed_try_again_later' => 'send failed try again later',
     'message_sent' => 'Message sent',
+    'availability' => 'Availability',
+    'condition' => 'Condition',
+    'refurbished' => 'Refurbished',
+    'old' => 'Old',
+    'new' => 'New',
+    'in_stock' => 'In-Stock',
+    'out_of_stock' => 'Out-Of-Stock',
+    'department' => 'Department',
+    'type' => 'Type',
 );

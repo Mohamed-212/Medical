@@ -43,4 +43,13 @@ return array(
     'send' => 'إرسال',
     'send_failed_try_again_later' => 'فشل الإرسال حاول مرة أخرى لاحقًا',
     'message_sent' => 'تم الارسال',
+    'availability' => 'متاح',
+    'condition' => 'الحالة',
+    'refurbished' => 'مجدد',
+    'Used' => 'مستعمل',
+    'new' => 'جديد',
+    'in_stock' => 'في المخزن',
+    'out_of_stock' => 'إنتهى من المخزن',
+    'department' => 'القسم',
+    'type' => 'النوع',
 );

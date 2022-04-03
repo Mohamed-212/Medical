@@ -12,7 +12,7 @@ class Branches extends Model
         'name_ar', 'name_en', 'name', 'address_ar', 'address_en', 'address', 'telephone', 'mobile', 'email'
     ];
     protected $appends = [
-      'name'
+      'name', 'address'
     ];
 
     public $validation_rules = [

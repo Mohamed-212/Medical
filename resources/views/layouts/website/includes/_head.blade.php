@@ -10,7 +10,7 @@
     <title>@yield('title')</title>
 
     @if(app()->getLocale() == 'ar')
-        <link rel="stylesheet" href="{{asset('assets/website-assets/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('assets/website-assets/css/bootstrap-rtl.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/website-assets/css/all-rtl.min.css')}}">
         <link rel="stylesheet" href="{{asset('assets/website-assets/css/font-rtl.css')}}">
         <link rel="stylesheet" href="{{asset('assets/website-assets/css/swiper-rtl.min.css')}}">

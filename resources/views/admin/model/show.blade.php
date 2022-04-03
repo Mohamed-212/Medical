@@ -14,6 +14,11 @@
         <!-- slick -->
         <link rel="stylesheet" href="{{asset('assets/admin-assets/slick/slick.css')}}">
         <link rel="stylesheet" href="{{asset('assets/admin-assets/slick/slick-theme.css')}}">
+        <style>
+            .slick-prev {
+                left: -30px;
+            }
+        </style>
     @endif
 
     <style>
@@ -62,6 +67,14 @@
                                         {!! Html::decode(Form::label(null, __('dashboard.device_brand'))) !!}
                                         {!! Form::text('brand', $model['model'], ['class' => 'form-control', 'placeholder' => __('dashboard.device_brand'), 'disabled' => true]) !!}
                                     </div>
+                                    <div class="form-group">
+                                        {!! Html::decode(Form::label(null, __('dashboard.availability') . ' <span class="text-bold text-danger">*</span>')) !!}
+                                        {!! Form::select('availability', ['in_stock' => __('dashboard.in_stock'), 'out_of_stock' => __('dashboard.out_of_stock')], $model['availability'], ['placeholder' => __('dashboard.choose one...'), 'class' => 'custom-select', 'disabled' => true]) !!}
+                                    </div>
+                                    <div class="form-group">
+                                        {!! Html::decode(Form::label(null, __('dashboard.condition') . ' <span class="text-bold text-danger">*</span>')) !!}
+                                        {!! Form::select('condition', ['new' => __('dashboard.new'), 'refurbished' => __('dashboard.refurbished'), 'used' => __('dashboard.used')], $model['condition'], ['placeholder' => __('dashboard.choose one...'), 'class' => 'custom-select', 'disabled' => true]) !!}
+                                    </div>
                                     @foreach(['ar', 'en'] as $lang)
                                         <div class="form-group">
                                             {!! Html::decode(Form::label(null, __('dashboard.description_'.$lang))) !!}
@@ -102,11 +115,25 @@
     <!-- Page specific script -->
     <script>
         $(function () {
+
+            @if(app()->getLocale() == 'ar')
+
+            $('.multiple-items').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                rtl: true
+            });
+
+            @else
+
             $('.multiple-items').slick({
                 infinite: true,
                 slidesToShow: 3,
                 slidesToScroll: 1
             });
+
+            @endif
             $(".summernote").each(function() {
                 $(this).summernote('disable');
             });
